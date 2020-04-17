@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+        <div asp-validation-summary="All">
+                @using formSubmission.Models
+                @model User
+            <form  class="shadow mt-4 p-4" asp-action="Create" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <label asp-for="FirstName">First Name:</label>
+                    <input asp-for="FirstName" class="form-control-sm" type="text" name="FirstName">
+                    <span style="color: red" asp-validation-for="FirstName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName">Last Name:</label>
+                    <input asp-for="LastName" class="form-control-sm" type="text" name="LastName">
+                    <span style="color: red" asp-validation-for="LastName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Age">Age:</label>
+                    <input asp-for="Age" class="form-control-sm" type="int" name="Age">
+                    <span style="color: red" asp-validation-for="Age"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email Address:</label>
+                    <input asp-for="Email" class="form-control-sm" type="email" name="Email">
+                    <span style="color: red" asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password:    </label>
+                    <input asp-for="Password" class="form-control-sm" type="password" name="Password">
+                    <span style="color: red" asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
